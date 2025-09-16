@@ -1,5 +1,8 @@
-class  employee():
+# static methods and class methods
+# junk methods-they are not directly related to the object of the class
 
+
+class  employee():
     # Inside class your variables will be called attributes
     # functions will be called methods
     
@@ -22,9 +25,13 @@ class  employee():
 
 
     # method to change the department of the employee
+    
     def changes(self,new_company):
         employee.company_name = new_company
 
+    @classmethod
+    def changed(cls,new_company):
+        cls.company_name = new_company
     def info(self):
         print(f"Employee {self.emp_name} works in {self.emp_dep} department in {self.company_name}")
 
@@ -32,13 +39,16 @@ class  employee():
 
     # and when u are mentinoing parameters in the method you have to mention self as the first parameter
     # then u have to pass the instance of the class when u are calling the method
-    
 
-emp1  = employee("Priya","IT")
-emp2  = employee("Priyanshu","HR")
+    @staticmethod
+    def addition(x,y): # when create static method no self is required
+        print(x+y)
 
-employee.company_name="ABC"
 
-emp1.changes("Copperpod AI")
+emp1 = employee("Priya","IT ")
 
-emp2.info()
+emp1.addition(5,7) # static method called using class instance
+
+emp1.changed("Copperpod AI Digital") 
+
+print(emp1.company_name)# class method called using class instance

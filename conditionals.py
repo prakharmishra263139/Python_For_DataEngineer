@@ -61,9 +61,6 @@ for i in two_list:
             continue
       print(i) 
 
-
-
-
 # While loops - 
 x = 1
 
